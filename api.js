@@ -8,7 +8,7 @@ let btn = document.querySelector("button");
 let not = document.getElementById("not");
 let weather = document.querySelector(".weather");
 //////////////////
-//             //
+//         s    //
 //////////////////
 // let getData = (url) => {
 //   return new Promise((resolve, reject) => {
@@ -73,8 +73,12 @@ btn.addEventListener("click", () => {
       deg.innerHTML = res.main.temp;
       windspeed.innerHTML = res.wind.speed;
       console.log(res);
+
+      weather.style.display = "block";
+      not.style.display = "none";
     })
     .catch((rej) => {
-      console.log("object");
+      weather.style.display = "none";
+      not.style.display = "block";
     });
 });
